@@ -1,3 +1,9 @@
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleBlueCrystal, function (sprite, location) {
+    game.gameOver(true)
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite, location) {
+    game.gameOver(false)
+})
 scene.setBackgroundColor(12)
 tiles.setCurrentTilemap(tilemap`level1`)
 let mySprite = sprites.create(img`
@@ -19,3 +25,4 @@ let mySprite = sprites.create(img`
     . . . . . f f . . . f f f . . . 
     `, SpriteKind.Player)
 controller.moveSprite(mySprite)
+scene.cameraFollowSprite(mySprite)
