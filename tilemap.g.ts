@@ -2,11 +2,15 @@
 namespace myTiles {
     //% fixedInstance jres blockIdentity=images._tile
     export const transparency16 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile1 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile3 = image.ofBuffer(hex``);
 
     helpers._registerFactory("tilemap", function(name: string) {
         switch(helpers.stringTrim(name)) {
             case "level1":
-            case "level1":return tiles.createTilemap(hex`140014000006030303030303030303030304080f0b0b0800060a000300030303030000000000040c000004080500000000000000000006010000000002000005050300030100000303030a090303030309030005050000000e000000000000000000000000000005050300030603030303030103030006030d00000505000000050003000e000200000005000000060a050006030a0003000e00020006030a0003030a0805000500000000000e00000005000000000000020500040b0b000b0b0c000200050005000e000002050000000000000000000200000005000e00000206030303030301000d0309030303040b0c000002050000000000020000000000000000000000060c060d0100030009030300060301030303030303000500020000000000000007000e00000000000300050009030303030006030a000e00030301000901050000000000000005000e00000000000e000002050006030003010005000e00030301000e000002050005000000020000000000000002000e000f0c09030a0b0b0b090b0b0b0b0b0b0b0b0b0b0b0c00`, img`
+            case "level1":return tiles.createTilemap(hex`1400140000060306040800000f0b0b0b0b0b080f0b0b0800060a0007000410100c0000000000040c000004080500000000000000000006010000000002000005060300030100000303030a090303030309030005050000000e000000000000000000000000000005060300030603010301030103030006030d0000050500000005000e000e000200000005000000060a050006030a000e000e00020006030a0003030a0e05000500000000000e00000005000000000000020500040b0b000b0b0c000200050005000e000002050000000000000000000200000005000e00000206030303030301000d0309030303040b0c0000020500000000000200000000000000000000000f0c060d0100110009030300060301030303030301000500020000000000000007000e00000000000e00050009030303030006030a000e00030301000901050000000000000005000e00000000000e000002050006030003010005000e00030301000e000002050005000000020000000000000002000e000f0c09030a0b0b0b090b0b0b0b0b0b0b0b0b0b0b0c00`, img`
 ....................
 ....................
 ....................
@@ -27,7 +31,7 @@ namespace myTiles {
 ....................
 ....................
 ....................
-`, [myTiles.transparency16,sprites.dungeon.purpleOuterNorthEast,sprites.dungeon.purpleOuterEast0,sprites.dungeon.purpleOuterNorth0,sprites.dungeon.purpleOuterSouthEast,sprites.dungeon.purpleOuterWest1,sprites.dungeon.purpleOuterNorthWest,sprites.dungeon.purpleOuterWest0,sprites.dungeon.purpleInnerNorthEast,sprites.dungeon.purpleInnerSouthWest,sprites.dungeon.purpleInnerSouthEast,sprites.dungeon.purpleOuterSouth1,sprites.dungeon.purpleOuterSouthWest,sprites.dungeon.purpleOuterNorth1,sprites.dungeon.purpleOuterEast1,sprites.dungeon.purpleInnerNorthWest], TileScale.Sixteen);
+`, [myTiles.transparency16,sprites.dungeon.purpleOuterNorthEast,sprites.dungeon.purpleOuterEast0,sprites.dungeon.purpleOuterNorth0,sprites.dungeon.purpleOuterSouthEast,sprites.dungeon.purpleOuterWest1,sprites.dungeon.purpleOuterNorthWest,sprites.dungeon.purpleOuterWest0,sprites.dungeon.purpleInnerNorthEast,sprites.dungeon.purpleInnerSouthWest,sprites.dungeon.purpleInnerSouthEast,sprites.dungeon.purpleOuterSouth1,sprites.dungeon.purpleOuterSouthWest,sprites.dungeon.purpleOuterNorth1,sprites.dungeon.purpleOuterEast1,sprites.dungeon.purpleInnerNorthWest,sprites.dungeon.purpleOuterSouth0,sprites.dungeon.purpleOuterNorth2,myTiles.tile1,myTiles.tile3], TileScale.Sixteen);
         }
         return null;
     })
@@ -35,6 +39,10 @@ namespace myTiles {
     helpers._registerFactory("tile", function(name: string) {
         switch(helpers.stringTrim(name)) {
             case "transparency16":return transparency16;
+            case "myTile":
+            case "tile1":return tile1;
+            case "myTile1":
+            case "tile3":return tile3;
         }
         return null;
     })
